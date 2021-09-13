@@ -6,7 +6,7 @@
 /*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 17:15:22 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/13 22:43:32 by masashi          ###   ########.fr       */
+/*   Updated: 2021/09/13 22:46:24 by masashi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static int	put_zero(char *res)
 static int	ft_puthex(unsigned long hex)
 {
 	char	*base;
-	char	*esult;
+	char	*result;
 	int		i;
 	int		digits;
 
