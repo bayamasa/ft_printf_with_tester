@@ -6,7 +6,7 @@
 /*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 16:16:17 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/13 16:21:46 by masashi          ###   ########.fr       */
+/*   Updated: 2021/09/13 22:09:13 by masashi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,43 +18,32 @@
 
 int main()
 {
-	// printf(" %s", "");
-	int a = ft_printf("ft = %x\n", ULONG_MAX);
-	int b = printf("re = %x\n", ULONG_MAX);	
+	int a = ft_printf(" %p %p ", 2111, 6);
+	int b = printf(" %p %p ", 2111, 6);
 	printf("ft = %d, real = %d", a, b);
-	// ft_printf("sss %c %c %s", 'u', 'a', "hhh");
 	return (0);
 }
 
 int	put_format(va_list ap, const char *fmt)
 {
-	int count = 0;
 	fmt++;
 	if (*fmt == 'c')
 		return (print_c(va_arg(ap, int)));
 	else if (*fmt == 's')
 		return (print_s(va_arg(ap, char *)));
 	else if (*fmt == 'p')
-	{
-		ft_putpointer((unsigned long)va_arg(ap, void *));
-	}
+		return (ft_putpointer(va_arg(ap, unsigned long)));
 	 else if (*fmt == 'd' || *fmt == 'i')
 		return (print_d_and_u(va_arg(ap, int), 0));
 	 else if (*fmt == 'u')
 		return (print_d_and_u(va_arg(ap, unsigned int), 0));
 	else if (*fmt == 'x')
-	{
-		return (ft_puthexnbr(va_arg(ap, long)));
-	}
+		return (ft_puthexnbr(va_arg(ap, unsigned int)));
 	else if (*fmt == 'X')
-	{
-		ft_puthexbignbr(va_arg(ap, long));
-	}
-	 else if (*fmt == '%')
-	{
-		ft_putchar_fd('%', 1);
-	}
-	return (count);
+		return (ft_puthexbignbr(va_arg(ap, unsigned int)));
+	else if (*fmt == '%')
+		return (print_percent());
+	return (0);
 }
 
 int	ft_printf(const char *fmt, ...)

@@ -6,7 +6,14 @@
 /*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 15:54:31 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/12 15:56:58 by masashi          ###   ########.fr       */
+/*   Updated: 2021/09/13 17:29:22 by masashi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+
+int	print_percent(void)
+{
+	ft_putchar_fd('%', 1);
+	return (1);
+}

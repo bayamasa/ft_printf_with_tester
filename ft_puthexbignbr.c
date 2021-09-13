@@ -6,7 +6,7 @@
 /*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 14:57:09 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/13 16:15:39 by masashi          ###   ########.fr       */
+/*   Updated: 2021/09/13 16:47:07 by masashi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,13 @@ static int	ft_putres(char *res)
 	return (digits);
 }
 
+static int	put_zero(char *res)
+{
+	ft_putchar_fd('0', 1);
+	free(res);
+	return (1);
+}
+
 int	ft_puthexbignbr(unsigned long hex)
 {
 	char	*base;
@@ -40,6 +47,8 @@ int	ft_puthexbignbr(unsigned long hex)
 	i = 0;
 	base = "0123456789abcdef";
 	result = (char *)malloc(sizeof(char) * 100000);
+	if (hex == 0)
+		return (put_zero(result));
 	while (1)
 	{
 		if (hex > 16)
