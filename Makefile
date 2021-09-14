@@ -17,6 +17,9 @@ SRCS =	ft_putchar_fd.c \
 			print_s.c \
 			print_u.c \
 			print_x.c \
+			ft_calloc.c \
+			ft_bzero.c \
+			ft_memset.c \
 
 BONUS = ft_lstiter_bonus.c \
 			ft_lstlast_bonus.c \

@@ -6,7 +6,7 @@
 /*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 16:16:17 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/13 22:09:13 by masashi          ###   ########.fr       */
+/*   Updated: 2021/09/14 15:51:42 by masashi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 // %p + 改行をするとうまくうごいていない気がする
 // printf戻り値 文字数
 
-int main()
-{
-	int a = ft_printf(" %p %p ", 2111, 6);
-	int b = printf(" %p %p ", 2111, 6);
-	printf("ft = %d, real = %d", a, b);
-	return (0);
-}
+// int main()
+// {
+// 	int a = ft_printf("%x%%%x%%%%\n",-42, 42);
+// 	// int b = printf("%X%%%x%%%%",-42, 42);
+// 	// printf("ft = %d, real = %d", a, b);
+// 	return (0);
+// }
 
 int	put_format(va_list ap, const char *fmt)
 {
