@@ -1,14 +1,11 @@
 NAME = libftprintf.a
 SRCS =	ft_putchar_fd.c \
-			ft_puthexbignbr.c \
-			ft_puthexnbr.c \
-			ft_putpointer.c \
 			ft_putchar_fd.c \
 			ft_putnbr_fd.c \
 			ft_putstr.c \
 			ft_strlen.c \
 			ft_toupper.c \
-			printf_test.c \
+			ft_printf.c \
 			print_c.c \
 			print_d_and_u.c \
 			print_p.c \

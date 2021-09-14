@@ -1,28 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_test.c                                      :+:      :+:    :+:   */
+/*   printf_f.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 16:16:17 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/14 15:51:42 by masashi          ###   ########.fr       */
+/*   Updated: 2021/09/14 16:28:31 by masashi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-// typedef void *	t_ptr;
-// %p + 改行をするとうまくうごいていない気がする
-// printf戻り値 文字数
-
-// int main()
-// {
-// 	int a = ft_printf("%x%%%x%%%%\n",-42, 42);
-// 	// int b = printf("%X%%%x%%%%",-42, 42);
-// 	// printf("ft = %d, real = %d", a, b);
-// 	return (0);
-// }
 
 int	put_format(va_list ap, const char *fmt)
 {
@@ -32,15 +20,15 @@ int	put_format(va_list ap, const char *fmt)
 	else if (*fmt == 's')
 		return (print_s(va_arg(ap, char *)));
 	else if (*fmt == 'p')
-		return (ft_putpointer(va_arg(ap, unsigned long)));
+		return (print_p(va_arg(ap, unsigned long)));
 	 else if (*fmt == 'd' || *fmt == 'i')
 		return (print_d_and_u(va_arg(ap, int), 0));
 	 else if (*fmt == 'u')
 		return (print_d_and_u(va_arg(ap, unsigned int), 0));
 	else if (*fmt == 'x')
-		return (ft_puthexnbr(va_arg(ap, unsigned int)));
+		return (print_x(va_arg(ap, unsigned int)));
 	else if (*fmt == 'X')
-		return (ft_puthexbignbr(va_arg(ap, unsigned int)));
+		return (print_lx(va_arg(ap, unsigned int)));
 	else if (*fmt == '%')
 		return (print_percent());
 	return (0);
