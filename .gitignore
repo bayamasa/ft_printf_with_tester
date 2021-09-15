@@ -1,1 +1,4 @@
-printfTester/*
+./printfTester/*
+.gitignore
+a.out
+main.c

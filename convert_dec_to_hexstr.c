@@ -1,47 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_lx.c                                         :+:      :+:    :+:   */
+/*   convert_dec_to_hexstr.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 14:57:09 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/15 16:22:39 by masashi          ###   ########.fr       */
+/*   Created: 2021/09/15 16:04:04 by masashi           #+#    #+#             */
+/*   Updated: 2021/09/15 16:47:45 by masashi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_putres(char *result)
+char	*convert_dec_to_hexstr(unsigned long dec)
 {
-	int	digits;
-	int	i;
-
-	digits = 0;
-	i = 0;
-	while (result[i] != '\0')
-		i++;
-	i--;
-	while (result[i] != '\0')
-	{
-		digits += 1;
-		ft_putchar_fd(ft_toupper(result[i]), 1);
-		i--;
-	}
-	free(result);
-	return (digits);
-}
-
-int	print_lx(unsigned int hex)
-{
-	char	*result;
+	char	*hexstr;
 	int		i;
 
 	i = 0;
-	if (hex == 0)
-		return (put_zero());
-	result = convert_dec_to_hexstr(hex);
-	if (!result)
-		return (0);
-	return (ft_putres(result));
+	hexstr = (char *)ft_calloc(sizeof(char), MAX_LEN);
+	if (!hexstr)
+		return (NULL);
+	while (1)
+	{
+		*(hexstr + i) = BASE[dec % 16];
+		i++;
+		if (dec > 16)
+			dec /= 16;
+		else
+		{
+			if (dec / 16 == 1)
+				*(hexstr + i) = BASE[dec / 16];
+			break ;
+		}
+	}
+	return (hexstr);
+}
+
+int	put_zero(void)
+{
+	ft_putchar_fd('0', 1);
+	return (1);
 }

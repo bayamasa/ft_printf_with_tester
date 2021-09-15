@@ -6,7 +6,7 @@
 /*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 15:54:31 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/14 17:02:51 by masashi          ###   ########.fr       */
+/*   Updated: 2021/09/15 16:24:05 by masashi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,7 @@ static int	ft_putres(char *result)
 		i--;
 	}
 	free(result);
-	result = NULL;
 	return (digits);
-}
-
-static int	put_zero(char *res)
-{
-	ft_putchar_fd('0', 1);
-	free(res);
-	res = NULL;
-	return (1);
 }
 
 int	print_x(unsigned int hex)
@@ -47,25 +38,10 @@ int	print_x(unsigned int hex)
 	int		i;
 
 	i = 0;
-	result = (char *)ft_calloc(sizeof(char), 100000);
 	if (hex == 0)
-		return (put_zero(result));
-	while (1)
-	{
-		if (hex > 16)
-		{
-			*(result + i) = BASE[hex % 16];
-			i++;
-			hex /= 16;
-		}
-		else
-		{
-			*(result + i) = BASE[hex % 16];
-			i++;
-			if (hex / 16 == 1)
-				*(result + i) = BASE[hex / 16];
-			break ;
-		}
-	}
+		return (put_zero());
+	result = convert_dec_to_hexstr(hex);
+	if (!result)
+		return (0);
 	return (ft_putres(result));
 }
