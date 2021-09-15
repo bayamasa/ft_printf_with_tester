@@ -2,3 +2,6 @@
 .gitignore
 a.out
 main.c
+*.o
+*.a
+printfTester
