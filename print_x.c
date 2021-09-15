@@ -6,7 +6,7 @@
 /*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 15:54:31 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/14 16:31:11 by masashi          ###   ########.fr       */
+/*   Updated: 2021/09/14 17:02:51 by masashi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	put_zero(char *res)
 	return (1);
 }
 
-int	print_x(long hex)
+int	print_x(unsigned int hex)
 {
 	char	*result;
 	int		i;

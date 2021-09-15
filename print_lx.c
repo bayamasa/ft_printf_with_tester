@@ -6,7 +6,7 @@
 /*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 14:57:09 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/14 16:31:31 by masashi          ###   ########.fr       */
+/*   Updated: 2021/09/15 09:44:16 by masashi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,27 +41,27 @@ static int	put_zero(char *res)
 	return (1);
 }
 
-int	print_lx(unsigned long hex)
+int	print_lx(unsigned int hex)
 {
 	char	*result;
 	int		i;
 
 	i = 0;
 	result = (char *)ft_calloc(sizeof(char), 100000);
+	if (!result)
+		return (NULL);
 	if (hex == 0)
 		return (put_zero(result));
 	while (1)
 	{
 		if (hex > 16)
 		{
-			*(result + i) = BASE[hex % 16];
-			i++;
+			*(result + i++) = BASE[hex % 16];
 			hex /= 16;
 		}
 		else
 		{
-			*(result + i) = BASE[hex % 16];
-			i++;
+			*(result + i++) = BASE[hex % 16];
 			if (hex / 16 == 1)
 				*(result + i) = BASE[hex / 16];
 			break ;
