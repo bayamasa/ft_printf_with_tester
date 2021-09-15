@@ -6,11 +6,11 @@
 /*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 16:57:30 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/14 16:57:31 by masashi          ###   ########.fr       */
+/*   Updated: 2021/09/15 17:56:43 by masashi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	ft_toupper(int c)
 {

@@ -6,7 +6,7 @@
 /*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 18:08:26 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/15 17:38:04 by masashi          ###   ########.fr       */
+/*   Updated: 2021/09/15 18:00:15 by masashi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 # include <stdarg.h>
 # include <stddef.h>
 # include <unistd.h>
+# include <stdlib.h>
 
 # define BASE "0123456789abcdef"
 # define MAX_LEN 100
+# define STR_BUFF_SIZE 1000000
 
 int		ft_printf(const char *fmt, ...);
 int		print_c(char c);
@@ -39,5 +41,6 @@ void	*ft_memset(void *buf, int ch, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_bzero(void *s, size_t n);
 size_t	ft_putstr(char *s);
+int		ft_toupper(int c);
 
 #endif

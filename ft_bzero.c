@@ -6,11 +6,11 @@
 /*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 16:56:35 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/14 16:56:36 by masashi          ###   ########.fr       */
+/*   Updated: 2021/09/15 17:56:15 by masashi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 void	ft_bzero(void *s, size_t n)
 {

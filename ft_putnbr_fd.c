@@ -6,11 +6,11 @@
 /*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 16:57:13 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/14 16:57:14 by masashi          ###   ########.fr       */
+/*   Updated: 2021/09/15 17:56:32 by masashi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 void	ft_putnbr_fd(long nb, int fd)
 {
