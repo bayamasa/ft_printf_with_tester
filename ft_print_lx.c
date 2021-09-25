@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_lx.c                                         :+:      :+:    :+:   */
+/*   ft_print_lx.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 14:57:09 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/15 16:22:39 by masashi          ###   ########.fr       */
+/*   Created: 2021/09/10 14:57:09 by mhirabay          #+#    #+#             */
+/*   Updated: 2021/09/23 15:22:41 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,15 @@ static int	ft_putres(char *result)
 	return (digits);
 }
 
-int	print_lx(unsigned int hex)
+int	ft_print_lx(unsigned int hex)
 {
 	char	*result;
 	int		i;
 
 	i = 0;
 	if (hex == 0)
-		return (put_zero());
-	result = convert_dec_to_hexstr(hex);
+		return (ft_put_zero());
+	result = ft_convert_dec_to_hexstr(hex);
 	if (!result)
 		return (0);
 	return (ft_putres(result));

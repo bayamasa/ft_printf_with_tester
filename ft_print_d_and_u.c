@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_d_and_u.c                                    :+:      :+:    :+:   */
+/*   ft_print_d_and_u.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 15:54:31 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/13 15:06:57 by masashi          ###   ########.fr       */
+/*   Created: 2021/09/12 15:54:31 by mhirabay          #+#    #+#             */
+/*   Updated: 2021/09/23 15:24:59 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_d_and_u(long nb, int digits)
+int	ft_print_d_and_u(long nb, int digits)
 {
 	long	num;
 
@@ -25,7 +25,7 @@ int	print_d_and_u(long nb, int digits)
 	}
 	if (num >= 10)
 	{
-		digits = print_d_and_u(num / 10, digits);
+		digits = ft_print_d_and_u(num / 10, digits);
 		num = num % 10;
 	}
 	if (num < 10)

@@ -6,18 +6,17 @@ SRCS =	ft_putchar_fd.c \
 			ft_strlen.c \
 			ft_toupper.c \
 			ft_printf.c \
-			print_c.c \
-			print_d_and_u.c \
-			print_p.c \
-			print_lx.c \
-			print_percent.c \
-			print_s.c \
-			print_u.c \
-			print_x.c \
+			ft_print_c.c \
+			ft_print_d_and_u.c \
+			ft_print_p.c \
+			ft_print_lx.c \
+			ft_print_percent.c \
+			ft_print_s.c \
+			ft_print_x.c \
 			ft_calloc.c \
 			ft_bzero.c \
 			ft_memset.c \
-			convert_dec_to_hexstr.c \
+			ft_convert_dec_to_hexstr.c \
 
 OBJS = ${SRCS:.c=.o}
 CC		= gcc

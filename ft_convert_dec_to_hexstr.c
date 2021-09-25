@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   convert_dec_to_hexstr.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/15 16:04:04 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/15 16:47:45 by masashi          ###   ########.fr       */
+/*   Created: 2021/09/15 16:04:04 by mhirabay          #+#    #+#             */
+/*   Updated: 2021/09/23 15:21:36 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*convert_dec_to_hexstr(unsigned long dec)
+char	*ft_convert_dec_to_hexstr(unsigned long dec)
 {
 	char	*hexstr;
 	int		i;
@@ -37,7 +37,7 @@ char	*convert_dec_to_hexstr(unsigned long dec)
 	return (hexstr);
 }
 
-int	put_zero(void)
+int	ft_put_zero(void)
 {
 	ft_putchar_fd('0', 1);
 	return (1);

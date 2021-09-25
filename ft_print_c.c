@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_s.c                                          :+:      :+:    :+:   */
+/*   ft_print_c.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 15:54:31 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/12 23:52:59 by masashi          ###   ########.fr       */
+/*   Created: 2021/09/12 15:54:31 by mhirabay          #+#    #+#             */
+/*   Updated: 2021/09/23 15:22:01 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_s(char *s)
+int	ft_print_c(char c)
 {
-	if (s == NULL)
-		return (ft_putstr("(null)"));
-	return (ft_putstr(s));
+	ft_putchar_fd(c, 1);
+	return (1);
 }

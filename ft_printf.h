@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masashi <masashi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 18:08:26 by masashi           #+#    #+#             */
-/*   Updated: 2021/09/15 18:00:15 by masashi          ###   ########.fr       */
+/*   Created: 2021/09/14 18:08:26 by mhirabay          #+#    #+#             */
+/*   Updated: 2021/09/23 15:24:20 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,18 @@
 # define STR_BUFF_SIZE 1000000
 
 int		ft_printf(const char *fmt, ...);
-int		print_c(char c);
-int		print_s(char *s);
-int		print_d_and_u(long nb, int digits);
-int		print_u(unsigned long nb, int digits);
-int		print_p(unsigned long ptr);
-int		print_x(unsigned int hex);
-int		print_lx(unsigned int hex);
-int		print_percent(void);
+int		ft_print_c(char c);
+int		ft_print_s(char *s);
+int		ft_print_d_and_u(long nb, int digits);
+int		ft_print_u(unsigned long nb, int digits);
+int		ft_print_p(unsigned long ptr);
+int		ft_print_x(unsigned int hex);
+int		ft_print_lx(unsigned int hex);
+int		ft_print_percent(void);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_fd(long n, int fd);
-char	*convert_dec_to_hexstr(unsigned long dec);
-int		put_zero(void);
+char	*ft_convert_dec_to_hexstr(unsigned long dec);
+int		ft_put_zero(void);
 size_t	ft_putstr(char *s);
 size_t	ft_strlen(const char *str);
 void	*ft_memset(void *buf, int ch, size_t n);
