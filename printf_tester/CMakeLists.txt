@@ -4,6 +4,9 @@ project(printf C CXX)
 
 set(PRINTF_PATH ../../printf)
 
+
+find_package(GTest REQUIRED)
+
 add_subdirectory(${PRINTF_PATH} build)
 include_directories(${PRINTF_PATH})
 
@@ -13,7 +16,7 @@ add_executable(
 )
 target_link_libraries(
   test
-  gtest_main
+  GTest::Main
   libftprintf
 )
 
