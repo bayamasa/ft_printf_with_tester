@@ -13,5 +13,5 @@
 		"memory": "c",
 		"random": "c",
 		"stdarg.h": "c"
-	}
+	},
 }

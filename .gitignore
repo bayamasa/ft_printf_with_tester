@@ -5,3 +5,4 @@ main.c
 *.o
 *.a
 printfTester
+build/
