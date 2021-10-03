@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_dec_to_hexstr.c                            :+:      :+:    :+:   */
+/*   ft_convert_dec_to_hexstr.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 16:04:04 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/09/23 15:21:36 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/03 19:42:03 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ char	*ft_convert_dec_to_hexstr(unsigned long dec)
 	char	*hexstr;
 	int		i;
 
-	i = 0;
 	hexstr = (char *)ft_calloc(sizeof(char), MAX_LEN);
 	if (!hexstr)
 		return (NULL);
+	i = 1;
 	while (1)
 	{
 		*(hexstr + i) = BASE[dec % 16];
@@ -34,6 +34,8 @@ char	*ft_convert_dec_to_hexstr(unsigned long dec)
 			break ;
 		}
 	}
+	i++;
+	*(hexstr + i) = '\0';
 	return (hexstr);
 }
 
@@ -41,4 +43,28 @@ int	ft_put_zero(void)
 {
 	ft_putchar_fd('0', 1);
 	return (1);
+}
+
+int	ft_putres(char *result, int type)
+{
+	int	digits;
+	int	i;
+
+	digits = 0;
+	i = 1;
+	while (result[i] != '\0')
+		i++;
+	i--;
+	while (result[i] != '\0')
+	{
+		digits += 1;
+		if (type == UPPER_MODE)
+			ft_putchar_fd(ft_toupper(result[i]), 1);
+		else
+			ft_putchar_fd(result[i], 1);
+		i--;
+	}
+	free(result);
+	result = NULL;
+	return (digits);
 }

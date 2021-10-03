@@ -6,31 +6,11 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 14:57:09 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/09/23 15:22:41 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/03 19:52:35 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static int	ft_putres(char *result)
-{
-	int	digits;
-	int	i;
-
-	digits = 0;
-	i = 0;
-	while (result[i] != '\0')
-		i++;
-	i--;
-	while (result[i] != '\0')
-	{
-		digits += 1;
-		ft_putchar_fd(ft_toupper(result[i]), 1);
-		i--;
-	}
-	free(result);
-	return (digits);
-}
 
 int	ft_print_lx(unsigned int hex)
 {
@@ -43,5 +23,5 @@ int	ft_print_lx(unsigned int hex)
 	result = ft_convert_dec_to_hexstr(hex);
 	if (!result)
 		return (0);
-	return (ft_putres(result));
+	return (ft_putres(result, UPPER_MODE));
 }

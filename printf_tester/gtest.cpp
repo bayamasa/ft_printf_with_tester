@@ -172,6 +172,7 @@ TEST(printf, percent_str_not_null_terminated)
 	EXPECT_STREQ(output1.c_str(), output2.c_str());
 	EXPECT_EQ(res1, res2);
 	free(str);
+	str = NULL;
 }
 
 TEST(printf, percent_str_not_ascii_include)
@@ -192,6 +193,7 @@ TEST(printf, percent_str_not_ascii_include)
 	EXPECT_STREQ(output1.c_str(), output2.c_str());
 	EXPECT_EQ(res1, res2);
 	free(str);
+	str = NULL;
 }
 
 /* *******
@@ -244,6 +246,7 @@ TEST(printf, percent_pointer_malloc)
 	EXPECT_STREQ(output1.c_str(), output2.c_str());
 	EXPECT_EQ(res1, res2);
 	free(p);
+	p = NULL;
 }
 
 TEST(printf, percent_pointer_immidiate)
